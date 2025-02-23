@@ -19,10 +19,13 @@ export default function Home() {
     { name: 'Projects', href: '#Projects', id: 'btnprojects'},
     { name: 'Contacts', href: '#Contacts', id: 'btncontacts'},
   ]
-  const [selectedItem, setSelectedItem] = useState(null)
-  const handleClick = (name: any) => {
-    setSelectedItem(name)
-  }
+  const [selectedItem, setSelectedItem] = useState('')
+
+  type HandleClick = (name: string) => void;
+
+  const handleClick: HandleClick = (name) => {
+    setSelectedItem(name);
+  };
     
   return (
     <NextThemesProvider attribute="class" defaultTheme="system">
@@ -44,7 +47,7 @@ export default function Home() {
           navigation={navigation}
           handleClick={handleClick}
           selectedItem={selectedItem}
-          setSelectedItem
+          setSelectedItem={setSelectedItem}
         />
         <Sections navigation={navigation} setSelectedItem={setSelectedItem} />
       </div>
