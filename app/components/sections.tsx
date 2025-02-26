@@ -1,4 +1,3 @@
-import { InView } from 'react-intersection-observer';
 import Home from './home';
 import Projects from './projects';
 import Contacts from './contacts';

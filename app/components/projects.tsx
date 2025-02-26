@@ -1,4 +1,3 @@
-import { InView } from "react-intersection-observer";
 import Container from "./container";
 
 interface ProjectsProps {

@@ -1,4 +1,4 @@
-import { JSX, ReactNode } from "react";
+import { ReactNode } from "react";
 import { InView } from "react-intersection-observer";
 
 interface ContainerProps {
