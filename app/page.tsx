@@ -2,7 +2,7 @@
 import Navbar from "./components/navbar";
 import Sections from "./components/sections"
 import { useState } from 'react';
-import { ToastContainer} from "react-toastify";
+import { Slide, ToastContainer} from "react-toastify";
 
 const NextThemesProvider = dynamic(
 	() => import('next-themes').then((e) => e.ThemeProvider),
@@ -28,21 +28,22 @@ export default function Home() {
   };
     
   return (
-    <NextThemesProvider attribute="class" defaultTheme="system">
-      <div className="relative">
-        <ToastContainer
-          position="top-center"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick={false}
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          stacked
-          theme="dark"
-        />
+    <div className="">
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        stacked
+        theme="dark"
+        transition={Slide}
+      />
+      <NextThemesProvider attribute="class" defaultTheme="system">
         <Navbar
           navigation={navigation}
           handleClick={handleClick}
@@ -50,7 +51,7 @@ export default function Home() {
           setSelectedItem={setSelectedItem}
         />
         <Sections navigation={navigation} setSelectedItem={setSelectedItem} />
-      </div>
-    </NextThemesProvider>
+      </NextThemesProvider>
+    </div>
   );
 }

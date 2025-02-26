@@ -1,4 +1,7 @@
 import { InView } from 'react-intersection-observer';
+import Home from './home';
+import Projects from './projects';
+import Contacts from './contacts';
 
 interface InViewEntry {
     target: {
@@ -21,18 +24,10 @@ export default function Sections(props: SectionsProps) {
     };
 
     return (
-        <div className='top-0 w-full z-50 transition-colors duration-300 light-background dark:dark-background'>
-            <InView as='div' className='container mx-auto h-screen flex flex-col justify-center items-center px-4 py-4' onChange={setInView} threshold={0.5} id='Home'>
-                <h1 className='text-[40px] md:text-[87px]'>HI,  I&apos;m Kayc Farias</h1>
-                <p className='text-[20px] md:text-[43px]'>Full stack developer</p>
-                <a href='kayc-faraias-CV' className='py-2 px-3 m-2 border border-black dark:border-white rounded-md hover:bg-grey hover:text-white'>Download CV</a>
-            </InView>
-            <InView as='div' className='container mx-auto h-screen flex flex-col justify-center items-center px-4 py-4' onChange={setInView} threshold={0.5} id='Projects'>
-                #Projects
-            </InView>
-            <InView as='div' className='container mx-auto h-screen flex flex-col justify-center items-center px-4 py-4' onChange={setInView} threshold={0.5} id='Contacts'>
-                #Contacts
-            </InView>
-        </div>
+      <div className="top-0 w-full transition-colors duration-300 light-background dark:dark-background">
+        <Home setInView={setInView} />
+        <Projects setInView={setInView} />
+        <Contacts setInView={setInView}/>
+      </div>
     );
 }
