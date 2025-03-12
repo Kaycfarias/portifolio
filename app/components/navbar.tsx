@@ -24,16 +24,16 @@ export default function Navbar(props: NavbarProps) {
   return (
     <Disclosure
       as="nav"
-      className="fixed data-[open]:backdrop-blur-sm data-[open]:w-screen data-[open]:h-screen data-[open]:scroll-hidden"
+      className="fixed h-14 data-[open]:backdrop-blur-sm data-[open]:w-screen data-[open]:h-screen data-[open]:scroll-hidden z-50"
     >
-      <div className="w-screen light-background dark:dark-background border-b border-purple-600/40 shadow-lg">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="flex flex-col w-screen light-background dark:dark-background border-b border-purple-600/40 shadow-lg">
+        <div className="h-14 max-w-screen-xl w-full flex flex-wrap items-center justify-between mx-auto px-2">
           <a
-            href="#"
+            href="#Home"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-purple-600/90 ">
-              @KaycFrias
+              @KaycFarias
             </span>
           </a>
           <DisclosureButton className="group inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:text-[#000000] dark:hover:bg-grey dark:focus:ring-[#3E0C0F]">
@@ -49,7 +49,7 @@ export default function Navbar(props: NavbarProps) {
           </DisclosureButton>
 
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-6 rtl:space-x-reverse md:mt-0 md:border-0 dark:border-gray-700">
+            <ul className="font-medium flex flex-col p-4 md:p-0 border border-gray-100 rounded-lg md:flex-row md:space-x-6 rtl:space-x-reverse md:border-0 dark:border-gray-700">
               {props.navigation.map((item: NavigationItem, index: number) => (
                 <li key={index}>
                   <a

@@ -7,16 +7,18 @@ interface ContainerProps {
   children: ReactNode;
 }
 
-export default function Container({ id, onChange, children }: ContainerProps) {
+export function Container({ id, onChange, children }: ContainerProps) {
   return (
-    <InView
-      as="div"
-      className="container mx-auto h-screen flex flex-col justify-center items-center px-4 py-4"
-      threshold={0.5}
-      id={id}
-      onChange={onChange}
-    >
-      {children}
-    </InView>
+    <div className="border-b border-purple-600">
+      <InView
+        as="div"
+        className="container mx-auto h-sections flex flex-col justify-center items-center p-4"
+        threshold={0.5}
+        id={id}
+        onChange={onChange}
+      >
+        {children}
+      </InView>
+    </div>
   );
 }

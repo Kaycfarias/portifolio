@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html 
       lang="en"
-      className={`${inter.className} scroll-smooth scrollbar`}>
+      className={`${inter.className} scroll-smooth`}>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased light-background dark:dark-background`}>
         {children}
         </body>

@@ -1,4 +1,4 @@
-import Container from "./container";
+import { Container } from "./container";
 interface ProjectsProps {
   setInView: (inView: boolean, entry: IntersectionObserverEntry) => void;
 }

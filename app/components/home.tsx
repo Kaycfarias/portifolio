@@ -1,18 +1,32 @@
-import Container from './container';
+import { useInView } from "react-intersection-observer";
+import { Container } from "./container";
+import Typewriter from "typewriter-effect";
 
 interface HomeProps {
   setInView: (inView: boolean, entry: IntersectionObserverEntry) => void;
 }
 
-
 export default function Home(props: HomeProps) {
-    return (
-      <Container
-        onChange={props.setInView}
-        id="Home"
-      >
-        <h1 className="text-[40px] text-purple-600/90 md:text-[87px]">
-          HI, I&apos;m Kayc Farias
+  const { ref, inView } = useInView({
+    /* Optional options */
+    threshold: 0.1,
+  });
+  return (
+    <Container onChange={props.setInView} id="Home">
+      <div className="flex flex-col items-center justify-center text-center">
+        <h1
+          className="text-[38px] sm:text-[60px] md:text-[83px] text-purple-600/90"
+          ref={ref}
+        >
+          {inView ? (
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter.typeString("HI, I'm Kayc Farias").start();
+              }}
+            />
+          ) : (
+            "|"
+          )}
         </h1>
         <p className="text-[20px] md:text-[43px]">Full stack developer</p>
         <a
@@ -21,6 +35,7 @@ export default function Home(props: HomeProps) {
         >
           Download CV
         </a>
-      </Container>
-    );
+      </div>
+    </Container>
+  );
 }

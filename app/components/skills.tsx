@@ -4,10 +4,10 @@ interface ProjectsProps {
   setInView: (inView: boolean, entry: IntersectionObserverEntry) => void;
 }
 
-export default function Projects(props: ProjectsProps) {
+export default function Skills(props: ProjectsProps) {
   return (
-    <Container onChange={props.setInView} id="Projects">
-      #Projects
+    <Container onChange={props.setInView} id="Skills">
+      #Skills
     </Container>
   );
 }

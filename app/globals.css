@@ -18,7 +18,12 @@
 .shadow-custom {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
+.h-sections {
+  min-height: calc(100vh - 3.5rem);
+}
+.sections {
+  height: calc(100vh - 3.5rem);
+}
 body {
   color: var(--foreground);
   background: var(--background);
@@ -26,7 +31,7 @@ body {
   box-sizing: border-box;
 }
 
-.scrollbar {
+.custom-scrollbar {
   @apply [&::-webkit-scrollbar]:w-2
   [&::-webkit-scrollbar-track]:bg-gray-100
   [&::-webkit-scrollbar-thumb]:bg-gray-300
