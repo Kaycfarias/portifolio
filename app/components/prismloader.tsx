@@ -15,7 +15,10 @@ export default function PrismLoader(props: PrimsLoaderProps) {
     Prism.highlightAll();
   }, []);
   return (
-    <pre className="border border-1 border-purple-600 rounded-md">
+    <pre
+      className={`border border-1 border-[--lightsecondary] dark:border-[--darksecondary] rounded-md language-${props.language}`}
+      suppressHydrationWarning
+    >
       <code className={`language-${props.language}`}>{props.code}</code>
     </pre>
   );

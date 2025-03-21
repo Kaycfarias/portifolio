@@ -1,4 +1,6 @@
 import { Container } from "./container";
+import TypeWriter from "./typewiter";
+
 interface ProjectsProps {
   setInView: (inView: boolean, entry: IntersectionObserverEntry) => void;
 }
@@ -6,7 +8,7 @@ interface ProjectsProps {
 export default function Contacts(props: ProjectsProps){
   return (
     <Container onChange={props.setInView} id='Contacts'>
-      <p>#Contacts</p>
+      <TypeWriter text={["contacts"]}/>
     </Container>
   );
 }

@@ -26,13 +26,13 @@ export default function Navbar(props: NavbarProps) {
       as="nav"
       className="fixed h-14 data-[open]:backdrop-blur-sm data-[open]:w-screen data-[open]:h-screen data-[open]:scroll-hidden z-50"
     >
-      <div className="flex flex-col w-screen light-background dark:dark-background border-b border-purple-600/40 shadow-lg">
+      <div className="flex flex-col w-screen light-background dark:dark-background border-b border-[--lightaccent] dark:border-[--darkaccent] shadow-lg">
         <div className="h-14 max-w-screen-xl w-full flex flex-wrap items-center justify-between mx-auto px-2">
           <a
             href="#Home"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-purple-600/90 ">
+            <span className="self-center text-2xl font-semibold whitespace-nowrap text-[--lightaccent] dark:text-[--darkaccent] ">
               @KaycFarias
             </span>
           </a>
@@ -49,7 +49,7 @@ export default function Navbar(props: NavbarProps) {
           </DisclosureButton>
 
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul className="font-medium flex flex-col p-4 md:p-0 border border-gray-100 rounded-lg md:flex-row md:space-x-6 rtl:space-x-reverse md:border-0 dark:border-gray-700">
+            <ul className="font-medium flex flex-col p-4 md:p-0 rounded-lg md:flex-row md:space-x-6 rtl:space-x-reverse">
               {props.navigation.map((item: NavigationItem, index: number) => (
                 <li key={index}>
                   <a
@@ -60,9 +60,9 @@ export default function Navbar(props: NavbarProps) {
                     }
                     className={classNames(
                       props.selectedItem == item.name
-                        ? "bg-purple-600/90 text-white"
-                        : "hover:bg-purple-600/40",
-                      "block border border-purple-600/40 shadow-custom rounded-md px-3 py-2 text-sm font-medium transition-colors duration-300"
+                        ? "bg-[--lightaccent] dark:bg-[--darkaccent] text-[--lightforeground] dark:text-[--darkforeground]"
+                        : "hover:bg-[--lightaccent-hover] dark:hover:bg-[--darkaccent-hover]",
+                      "block border border-[--lightaccent] dark:border-[--darkaccent] shadow-custom rounded-md px-3 py-2 text-sm font-medium transition-colors duration-300"
                     )}
                   >
                     {item.name}
@@ -87,9 +87,9 @@ export default function Navbar(props: NavbarProps) {
                   }
                   className={classNames(
                     props.selectedItem == item.name
-                      ? "bg-purple-600/90 text-white"
-                      : "hover:bg-purple-600/40",
-                    "block border border-purple-600/40 shadow-custom rounded-md px-3 py-2 text-base font-medium"
+                      ? "bg-[--lightaccent-pressed] dark:bg-[--darkaccent-pressed] text-[--lightforeground] dark:text-[--darkforeground]"
+                      : "hover:bg-[--lightaccent-hover] dark:hover:bg-[--darkaccent-hover]",
+                    "block border border-[--lightaccent] shadow-custom rounded-md px-3 py-2 text-sm font-medium transition-colors duration-300"
                   )}
                 >
                   {item.name}

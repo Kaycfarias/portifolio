@@ -2,18 +2,13 @@ import { Container } from "./container";
 import PrismLoader from "./prismloader";
 import kayc from "@/public/kaycfarias.jpg";
 import Image from "next/image";
-import Typewriter from "typewriter-effect";
-import { useInView } from "react-intersection-observer";
+import TypeWriter from "./typewiter";
 
 interface HomeProps {
   setInView: (inView: boolean, entry: IntersectionObserverEntry) => void;
 }
 
 export default function About(props: HomeProps) {
-  const { ref, inView } = useInView({
-    /* Optional options */
-    threshold: 0.1,
-  });
   const markdown = `class KaycFarias {
   name: string = 'Kayc Farias';
   city: string = 'Sumaré-SP';
@@ -21,24 +16,16 @@ export default function About(props: HomeProps) {
 }`;
   return (
     <Container onChange={props.setInView} id="About">
-      <h1
-        className="text-[40px] sm:text-[60px] md:text-[87px] text-purple-600/90 text-center"
-        ref={ref}
-      >
-        {inView ? (
-          <Typewriter
-            onInit={(typewriter) => {
-              typewriter.typeString("About me").start();
-            }}
-          />
-        ) : (
-          "|"
-        )}
-      </h1>
-      <h1 className="text-[25px]  md:text-[60px] text-purple-600/90"></h1>
+      <TypeWriter text={["About me"]} />
       <div className="md:grid md:grid-cols-2">
         <div className="flex justify-center items-center flex-col p-4">
-          <Image className="rounded-full border-2 border-purple-600" src={kayc} alt="Kayc Farias" width={360} height={360}/>
+          <Image
+            className="rounded-full border-4 border-[--lightaccent] dark:border-[--darkaccent]"
+            src={kayc}
+            alt="Kayc Farias"
+            width={360}
+            height={360}
+          />
           <PrismLoader code={markdown} language="typescript" />
         </div>
         <div className="pt-2">

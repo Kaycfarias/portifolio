@@ -4,15 +4,6 @@ import Sections from "./components/sections";
 import { useState } from "react";
 import { Slide, ToastContainer } from "react-toastify";
 
-const NextThemesProvider = dynamic(
-  () => import("next-themes").then((e) => e.ThemeProvider),
-  {
-    ssr: false,
-  }
-);
-
-import dynamic from "next/dynamic";
-
 export default function Home() {
   const navigation = [
     { name: "About", href: "#About", id: "Btnabout" },
@@ -29,16 +20,15 @@ export default function Home() {
   };
 
   return (
-    
-    <NextThemesProvider attribute="class" defaultTheme="system">
-        <Navbar
-          navigation={navigation}
-          handleClick={handleClick}
-          selectedItem={selectedItem}
-          setSelectedItem={setSelectedItem}
-        />
-        <Sections navigation={navigation} setSelectedItem={setSelectedItem} />
-        <ToastContainer
+    <>
+      <Navbar
+        navigation={navigation}
+        handleClick={handleClick}
+        selectedItem={selectedItem}
+        setSelectedItem={setSelectedItem}
+      />
+      <Sections navigation={navigation} setSelectedItem={setSelectedItem} />
+      <ToastContainer
         position="top-center"
         autoClose={3000}
         hideProgressBar={false}
@@ -48,10 +38,9 @@ export default function Home() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        
         transition={Slide}
         limit={3}
       />
-    </NextThemesProvider>
+    </>
   );
 }

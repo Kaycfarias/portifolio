@@ -3,17 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff; /* white */ 
-  --foreground: #000000; /* black */
+  /*Light mode variables*/
+  --lightbackground: #ffffff; 
+  --lightforeground: #000000;
+  --lightsecondary: #ff0000; 
+  --lightaccent: #f87171; 
+  --lightaccent-hover: #ef4444;
+  --lightaccent-pressed: #dc2626;
+
+  /*Dark mode variables*/
+  --darkbackground: #000000; 
+  --darkforeground: #ffffff; 
+  --darkaccent:rgb(128, 17, 74); 
+  --darkaccent-hover:rgb(108, 0, 45); 
+  --darkaccent-pressed:rgb(165, 36, 118); 
 }
 .dark {
   .dark\:dark-background {
-    @apply bg-[#22181C] text-[#ffffff];};
+    @apply bg-[--darkbackground] text-[--darkforeground];};
   }
 
 .light-background {
-  background: #F6E8EA;
-  color: #000000;
+  background: --lightbackground;
+  color: --lightforeground;
 }
 .shadow-custom {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -25,8 +37,8 @@
   height: calc(100vh - 3.5rem);
 }
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--lightforeground);
+  background: var(--lightbackground);
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }

@@ -1,37 +1,26 @@
-import { useInView } from "react-intersection-observer";
 import { Container } from "./container";
-import Typewriter from "typewriter-effect";
+import TypeWriter from "./typewiter";
+import "./glitch.css";
 
 interface HomeProps {
   setInView: (inView: boolean, entry: IntersectionObserverEntry) => void;
 }
 
 export default function Home(props: HomeProps) {
-  const { ref, inView } = useInView({
-    /* Optional options */
-    threshold: 0.1,
-  });
   return (
     <Container onChange={props.setInView} id="Home">
-      <div className="flex flex-col items-center justify-center text-center">
-        <h1
-          className="text-[38px] sm:text-[60px] md:text-[83px] text-purple-600/90"
-          ref={ref}
+      <TypeWriter text={["Welcome", "Hello word"]} />
+      <div className="flex flex-col items-center justify-center text-center glitch-wrappe">
+        <p
+          className="glitch text-[38px] sm:text-[60px] md:text-[83px]"
+          data-glitch="Hi, I'm Kayc Farias"
         >
-          {inView ? (
-            <Typewriter
-              onInit={(typewriter) => {
-                typewriter.typeString("HI, I'm Kayc Farias").start();
-              }}
-            />
-          ) : (
-            "|"
-          )}
-        </h1>
+          Hi, I&apos;m Kayc Farias
+        </p>
         <p className="text-[20px] md:text-[43px]">Full stack developer</p>
         <a
           href="kayc-faraias-CV"
-          className="py-2 px-3 m-2 border border-black dark:border-white rounded-md hover:bg-grey hover:text-white"
+          className="py-2 px-3 m-2 border border-[--lightaccent] dark:border-[--darktaccent] rounded-md hover:bg-grey hover:text-[--lightaccent-hover] dark:hover:text-[--darkaccent-hover]"
         >
           Download CV
         </a>

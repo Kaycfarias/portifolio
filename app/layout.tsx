@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
+import Script from "next/script";
 
 const inter = Geist({ subsets: ["latin"] });
 
@@ -25,12 +27,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html 
-      lang="en"
-      className={`${inter.className} scroll-smooth`}>
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased light-background dark:dark-background`}>
-        {children}
+      <html
+        lang="en"
+        className={`${inter.className} scroll-smooth`}
+        suppressHydrationWarning
+      >
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased light-background dark:dark-background`}
+        >
+          <ThemeProvider attribute="class" defaultTheme="system">
+            {children}
+          </ThemeProvider>
         </body>
-    </html>
+      </html>
   );
 }
