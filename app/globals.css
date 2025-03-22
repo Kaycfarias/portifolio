@@ -16,8 +16,9 @@
   --darkforeground: #ffffff; 
   --darkaccent:rgb(128, 17, 74); 
   --darkaccent-hover:rgb(108, 0, 45); 
-  --darkaccent-pressed:rgb(165, 36, 118); 
+  --darkaccent-pressed:rgb(165, 36, 118);
 }
+
 .dark {
   .dark\:dark-background {
     @apply bg-[--darkbackground] text-[--darkforeground];};

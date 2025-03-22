@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 
 const inter = Geist({ subsets: ["latin"] });
@@ -27,18 +28,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html
-        lang="en"
-        className={`${inter.className} scroll-smooth`}
-        suppressHydrationWarning
+    <html
+      lang="en"
+      className={`${inter.className} scroll-smooth`}
+      suppressHydrationWarning
+    >
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased light-background dark:dark-background`}
       >
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased light-background dark:dark-background`}
-        >
-          <ThemeProvider attribute="class" defaultTheme="system">
-            {children}
-          </ThemeProvider>
-        </body>
-      </html>
+        <ThemeProvider attribute="class" defaultTheme="system">
+          {children}
+        </ThemeProvider>
+      </body>
+      <GoogleAnalytics gaId="G-THFTGJ6T8F" />
+    </html>
   );
 }
