@@ -87,9 +87,9 @@ export default function Navbar(props: NavbarProps) {
                   }
                   className={classNames(
                     props.selectedItem == item.name
-                      ? "bg-[--lightaccent-pressed] dark:bg-[--darkaccent-pressed] text-[--lightforeground] dark:text-[--darkforeground]"
+                      ? "bg-[--lightaccent] dark:bg-[--darkaccent] text-[--lightforeground] dark:text-[--darkforeground]"
                       : "hover:bg-[--lightaccent-hover] dark:hover:bg-[--darkaccent-hover]",
-                    "block border border-[--lightaccent] shadow-custom rounded-md px-3 py-2 text-sm font-medium transition-colors duration-300"
+                    "block border border-[--lightaccent] dark:border-[--darkaccent] shadow-custom rounded-md px-3 py-2 text-sm font-medium transition-colors duration-300"
                   )}
                 >
                   {item.name}

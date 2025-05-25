@@ -5,6 +5,7 @@ import Projects from './projects';
 import Contacts from './contacts';
 import Footer from "./footer";
 
+
 interface InViewEntry {
     target: {
         id: string;

@@ -16,7 +16,7 @@ export default function PrismLoader(props: PrimsLoaderProps) {
   }, []);
   return (
     <pre
-      className={`border border-1 border-[--lightsecondary] dark:border-[--darksecondary] rounded-md language-${props.language}`}
+      className={`border border-1 border-[--lightaccent] dark:border-[--darkaccent] rounded-md language-${props.language}`}
       suppressHydrationWarning
     >
       <code className={`language-${props.language}`}>{props.code}</code>

@@ -9,3 +9,7 @@ export { default as LogoJavascript } from "./javascript";
 export { default as LogoPython } from "./python";
 export { default as LogoHtml5 } from "./html";
 export { default as LogoCss3 } from "./css";
+export { default as LogoSass } from "./sass";
+export { default as LogoExpress } from "./express";
+export { default as LogoPHP } from "./php";
+export { default as LogoSql } from "./sql";

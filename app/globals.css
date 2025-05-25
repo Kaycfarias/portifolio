@@ -5,8 +5,7 @@
 :root {
   /*Light mode variables*/
   --lightbackground: #ffffff; 
-  --lightforeground: #000000;
-  --lightsecondary: #ff0000; 
+  --lightforeground: #000000; 
   --lightaccent: #f87171; 
   --lightaccent-hover: #ef4444;
   --lightaccent-pressed: #dc2626;
@@ -19,24 +18,26 @@
   --darkaccent-pressed:rgb(165, 36, 118);
 }
 
+.light-background {
+  background: var(--lightbackground);
+  color: var(--lightforeground);
+}
+
 .dark {
   .dark\:dark-background {
     @apply bg-[--darkbackground] text-[--darkforeground];};
   }
 
-.light-background {
-  background: --lightbackground;
-  color: --lightforeground;
-}
 .shadow-custom {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .h-sections {
-  min-height: calc(100vh - 3.5rem);
+  min-height: calc(100dvh - 3.5rem);
 }
 .sections {
-  height: calc(100vh - 3.5rem);
+  height: calc(100dvh - 3.5rem);
 }
+
 body {
   color: var(--lightforeground);
   background: var(--lightbackground);

@@ -4,14 +4,18 @@ import { Tooltip } from "react-tooltip";
 
 import {
   LogoCss3,
+  LogoExpress,
   LogoGit,
   LogoGithub,
   LogoHtml5,
   LogoJavascript,
   LogoNextjs,
   LogoNodejs,
+  LogoPHP,
   LogoPython,
   LogoReact,
+  LogoSass,
+  LogoSql,
   LogoTailwind,
   Typescript,
 } from "./icons";
@@ -22,17 +26,21 @@ interface ProjectsProps {
 
 // This is a list of skills and technologies that I have. You can add more skills to the list.
 const skills = [
-  { name: "React", icon: <LogoReact width={50} height={50} /> },
-  { name: "Typescript", icon: <Typescript width={50} height={50} /> },
-  { name: "Nextjs", icon: <LogoNextjs width={50} height={50} /> },
-  { name: "Tailwindcss", icon: <LogoTailwind width={50} height={50} /> },
-  { name: "Nodejs", icon: <LogoNodejs width={50} height={50} /> },
-  { name: "Git", icon: <LogoGit width={50} height={50} /> },
-  { name: "GitHub", icon: <LogoGithub width={50} height={50} /> },
-  { name: "Javascript", icon: <LogoJavascript width={50} height={50} /> },
-  { name: "Python", icon: <LogoPython width={50} height={50} /> },
-  { name: "Html", icon: <LogoHtml5 width={50} height={50} /> },
-  { name: "Css", icon: <LogoCss3 width={50} height={50} /> },
+  { name: "Nextjs", icon: <LogoNextjs width={75} height={75} /> },
+  { name: "React", icon: <LogoReact width={75} height={75} /> },
+  { name: "Typescript", icon: <Typescript width={75} height={75} /> },
+  { name: "Javascript", icon: <LogoJavascript width={75} height={75} /> },
+  { name: "Python", icon: <LogoPython width={75} height={75} /> },
+  { name: "Nodejs", icon: <LogoNodejs width={75} height={75} /> },
+  { name: 'Express.js', icon: <LogoExpress width={75} height={75} /> },
+  { name: "Html", icon: <LogoHtml5 width={75} height={75} /> },
+  { name: "Css", icon: <LogoCss3 width={75} height={75} /> },
+  { name: "Tailwindcss", icon: <LogoTailwind width={75} height={75} /> },
+  { name: "Sass", icon: <LogoSass width={75} height={75} /> },
+  { name: "Git", icon: <LogoGit width={75} height={75} /> },
+  { name: "GitHub", icon: <LogoGithub width={75} height={75} /> },
+  { name: "PHP", icon: <LogoPHP width={75} height={75} /> },
+  { name: "SQL", icon: <LogoSql width={75} height={75} /> },
 ];
 
 export default function Skills(props: ProjectsProps) {
@@ -40,7 +48,7 @@ export default function Skills(props: ProjectsProps) {
     <Container onChange={props.setInView} id="Skills">
       <TypeWriter text={["Skills"]} />
       <div>
-        <ul className="grid grid-cols-3 gap-4">
+        <ul className="grid grid-cols-3 sm:grid-cols-5 gap-4">
           {skills.map((skill, index) => (
             <li
               key={index}
